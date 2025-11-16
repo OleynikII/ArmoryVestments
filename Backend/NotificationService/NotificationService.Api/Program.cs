@@ -1,23 +1,20 @@
 var builder = WebApplication.CreateBuilder(args);
+var configuration = builder.Configuration;
 
-// Add services to the container.
+// Options
+builder.Services.Configure<SmtpEmailOptions>(configuration.GetSection(nameof(SmtpEmailOptions)));
 
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.AddServiceDefaults();
+
+builder.Services.AddServices();
+
+builder.AddRabbitMQClient(connectionName: "rabbitmq");
+
+builder.Services.AddTransient<WelcomeUserEventConsumer>();
+builder.Services.AddHostedService<NotificationEventConsumerListener>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
-app.UseAuthorization();
-
-app.MapControllers();
+app.UseMiddleware<ErrorHandlerMiddleware>();
 
 app.Run();

@@ -1,0 +1,70 @@
+﻿namespace UserService.Api.Endpoints.Accounts;
+
+public static class UpdatePassword
+{
+    public record Request(
+        [property: JsonPropertyName("old_password")]
+        string OldPassword,
+        [property: JsonPropertyName("new_password")]
+        string NewPassword,
+        [property: JsonPropertyName("confirm_new_password")]
+        string ConfirmNewPassword);
+
+    public sealed class Validator : AbstractValidator<Request>
+    {
+        public Validator()
+        {
+            RuleFor(x => x.OldPassword)
+                .NotEmpty().WithMessage("Текущий пароль обязателен для заполнения!")
+                .MinimumLength(8).WithMessage($"Длина текущего пароля должна быть не менее 8 символов!");
+
+            RuleFor(x => x.NewPassword)
+                .NotEmpty().WithMessage("Новый пароль обязателен для заполнения!")
+                .MinimumLength(8).WithMessage($"Новый пароль должен содержать минимум 8 символов")
+                .Matches("[A-Z]").WithMessage("Новый пароль должен содержать хотя бы одну заглавную букву!")
+                .Matches("[a-z]").WithMessage("Новый пароль должен содержать хотя бы одну строчную букву!")
+                .Matches("[0-9]").WithMessage("Новый пароль должен содержать хотя бы одну цифру!")
+                .NotEqual(x => x.OldPassword).WithMessage("Новый пароль должен отличаться от текущего!");
+
+            RuleFor(x => x.ConfirmNewPassword)
+                .NotEmpty().WithMessage("Повтор пароля обязателен для заполнения!")
+                .Equal(x => x.NewPassword).WithMessage("Пароли не совпадают!");
+        }
+    }
+
+    public class Endpoint : IEndpoint
+    {
+        public void MapEndpoint(IEndpointRouteBuilder app)
+        {
+            app.MapPut("accounts/update-password", Handler)
+                .WithTags("Accounts")
+                .RequireAuthorization();
+        }
+    }
+
+    public static async Task<IResult> Handler(
+        Request request,
+        IHttpContextAccessor httpContextAccessor,
+        IUserRepository userRepository,
+        IValidator<Request> validator,
+        CancellationToken cancellationToken = default)
+    {
+        var currentUserIdStr = httpContextAccessor.HttpContext!.User.FindFirstValue(ApplicationClaimTypes.UserId);
+        if (string.IsNullOrWhiteSpace(currentUserIdStr)) return Results.Unauthorized();
+        
+        var userId = Guid.Parse(currentUserIdStr);
+        var user = await userRepository.GetByIdAsync(
+            id: userId,
+            cancellationToken: cancellationToken);
+        if (user == null) return Results.NotFound();
+        
+        var validatorResult = await validator.ValidateAsync(request, cancellationToken);
+        if (!validatorResult.IsValid) return Results.BadRequest(validatorResult.Errors);
+        
+        user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.NewPassword);
+        
+        await userRepository.UpdateAsync(user, cancellationToken);
+        
+        return Results.NoContent();
+    }
+}

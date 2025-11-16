@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="userservicedb" uuid="e1e491d9-ebbf-4e25-af2b-d7bc4eef0b2e">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:53209/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="413dc042-66ea-4156-9fcd-f6c74fd571a8">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:56976/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="91903436-4afa-49ef-ab29-85adc7095a7b">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:62376/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="e08a0141-ce56-4f7b-86a7-724ad6f73a65">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:54158/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="1b2c4457-85e2-4927-bb5d-a500d0fc105a">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:49764/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="56330dff-dc73-4d49-ad92-3acd23063ff2">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:50898/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="1d538979-28f1-42ef-a09c-7bd47d20c305">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:51222/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="f613e5fa-7eb8-40de-98ee-d2c3eda5a315">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:60470/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="5afe03d2-5460-4c3b-9742-fd1f0024a849">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:65175/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="e718a8a5-e46e-4d28-8e96-3d279982e819">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:52914/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="02deb271-aa86-4fa0-a593-2174b0e59309">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:54445/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="123d32c9-1619-411c-9796-b180e9a5597c">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:61727/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="ff9e5cb8-c375-4c2b-b83e-035c7013cc10">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:55724/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="68fbaab5-f84d-4a30-9089-45cecfff9822">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:58884/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="a70eb055-0a8f-40c7-be2d-f033e411bb85">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:62271/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="602f1c21-a792-4a1e-b6c8-d61a2bf66de0">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:50799/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="3c5d2d6b-281b-4827-a162-80d0d82c9dd9">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:55533/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="d7444205-7e0d-49d6-be9c-47b70af55f70">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:53044/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="4606b23e-8e18-4d59-9d3d-438910ad1e0b">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:61328/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="33593325-fecd-46f6-aec1-b8925ff0ba8a">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:62967/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="0612d887-f895-4724-a214-9a6fc7f46cf8">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:60286/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="58ba1f4a-d581-4aed-beba-aed28675e432">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:50900/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="0d84fcca-6ba2-47d9-b0ed-f780ff8f1a02">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:54409/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="postgres" uuid="384f62fd-976d-4371-bc40-3365fbf83414">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:54408/?password=Z%2BuxF.0aVsHhnnGssgdy6f&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="f235e5ed-5aa6-481a-bf82-89b455bb6317">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:57192/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="972fdebc-e8ff-4102-95c8-e6d6c19bd522">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:53107/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="56d4f122-6037-4fe5-8cf3-b75cbe398949">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:50374/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="5b285e2b-0ad8-4ce4-9843-276114c8a81b">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:51168/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="9203fd4e-1d9c-44ce-8532-4a265f60d7c9">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:52653/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="00f194a1-e124-49d5-8b21-a68681bb1eb1">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:51325/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="c3359d06-e77f-4bad-8778-3701940db344">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:49644/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="3103e687-94ed-47f7-919d-c8221f78f776">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:52858/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="0544eb12-84e8-4ce7-9bdb-47c5cd583251">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:54577/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="526b293f-fee0-4d0a-9242-22dfe01ab7d7">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:57362/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="788b8304-084b-49a3-afcc-fbd82dd8438e">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:57575/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="706123f8-19ff-4c6e-bde6-51b2154db1d6">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:64433/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="66c6cb0e-1f5c-4e76-9da0-0183da4f713f">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:49829/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="257dc010-aaf4-4bdb-9531-551d8815bd00">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:49409/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="f6816eab-bde9-4a04-ad59-d6697520a600">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:63061/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="d129bf4c-7bd6-4049-89e3-0d9c3016ff9f">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:54224/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="73de2963-588f-499b-a377-8621b76a97be">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:49884/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="401a4678-fcc6-432f-b105-46e89a8b47bd">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:51494/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="153fa7f0-e75d-4601-a143-16ec78c2ac04">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:63138/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="0ef00703-f679-42ce-ad2f-804df57f587a">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:59465/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="125524d9-428e-4585-9e6d-233dc4de09d6">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:59510/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="userservicedb" uuid="3ef93ad0-8541-4463-b678-ea52f63cd016">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:55220/?password=6NXuy%7B9H2%7E%29C%2B1XUvb*%2B%7Dv&amp;user=postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+  </component>
+</project>

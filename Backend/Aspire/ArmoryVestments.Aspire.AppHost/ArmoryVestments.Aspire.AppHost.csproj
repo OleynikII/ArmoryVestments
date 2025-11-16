@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <Sdk Name="Aspire.AppHost.Sdk" Version="9.5.2"/>
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <UserSecretsId>941881fc-3886-4490-9d00-5de614dbc6fc</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Aspire.Hosting.AppHost" Version="9.5.2"/>
+        <PackageReference Include="Aspire.Hosting.PostgreSQL" Version="9.5.2" />
+        <PackageReference Include="Aspire.Hosting.RabbitMQ" Version="9.5.2" />
+        <PackageReference Include="Aspire.Hosting.Redis" Version="9.5.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\LoggingService\LoggingService.Api\LoggingService.Api.csproj" />
+      <ProjectReference Include="..\..\NotificationService\NotificationService.Api\NotificationService.Api.csproj" />
+      <ProjectReference Include="..\..\PortfolioService\PortfolioService.Api\PortfolioService.Api.csproj" />
+      <ProjectReference Include="..\..\PricingService\PricingService.Api\PricingService.Api.csproj" />
+      <ProjectReference Include="..\..\TransactionService\TransactionService.Api\TransactionService.Api.csproj" />
+      <ProjectReference Include="..\..\UserService\UserService.Api\UserService.Api.csproj" />
+      <ProjectReference Include="..\ArmoryVestments.Aspire.ServiceDefaults\ArmoryVestments.Aspire.ServiceDefaults.csproj" />
+    </ItemGroup>
+
+</Project>

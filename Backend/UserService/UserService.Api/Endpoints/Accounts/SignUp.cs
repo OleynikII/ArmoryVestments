@@ -1,0 +1,143 @@
+﻿namespace UserService.Api.Endpoints.Accounts;
+
+public static class SignUp
+{
+        public record Request(
+        string LastName,
+        string FirstName,
+        string? MiddleName,
+        string UserName,
+        string Email, 
+        string Password);
+    public record Response(
+        Guid Id,
+        string LastName, 
+        string FirstName,
+        string? MiddleName,
+        string UserName,
+        string Email,
+        bool IsEmailConfirmed,
+        bool IsActive);
+
+    public sealed class Validator : AbstractValidator<Request>
+    {
+        private const string NameRegex = @"^[\p{L}\-\s']+$";
+        private const string UsernameRegex = @"^[a-zA-Z0-9_]+$";
+        
+        public Validator()
+        {
+            RuleFor(x => x.LastName)
+                .NotEmpty().WithMessage("Фамилия обязательна для заполнения!")
+                .MaximumLength(32).WithMessage("Длина фамилии не должна превышать 32 символов!")
+                .Matches(NameRegex).WithMessage("Фамилия содержит недопустимые символы!")
+                .Must(BeValidNamePart).WithMessage("Фамилия не может состоять только из пробелов или дефисов!");
+            
+            RuleFor(x => x.FirstName)
+                .NotEmpty().WithMessage("Имя обязательно для заполнения!")
+                .MaximumLength(32).WithMessage($"Длина имени не должна превышать 32 символов!")
+                .Matches(NameRegex).WithMessage("Имя содержит недопустимые символы!")
+                .Must(BeValidNamePart).WithMessage("Имя не может состоять только из пробелов или дефисов!");
+
+            RuleFor(x => x.MiddleName)
+                .MaximumLength(32).WithMessage($"Длина отчества не должна превышать 32 символов!")
+                .Matches(NameRegex).When(x => !string.IsNullOrEmpty(x.MiddleName))
+                .WithMessage("Отчество содержит недопустимые символы!")
+                .Must(BeValidNamePart).When(x => !string.IsNullOrEmpty(x.MiddleName))
+                .WithMessage("Отчество не может состоять только из пробелов или дефисов!");
+
+            RuleFor(x => x.UserName)
+                .NotEmpty().WithMessage("Имя пользователя обязательно для заполнения!")
+                .MaximumLength(32).WithMessage("Длина логина не должна превышать 32 символов!")
+                .Matches(UsernameRegex).WithMessage("Логин может содержать только латинские буквы, цифры и подчёркивания!")
+                .Must(BeValidUsername).WithMessage("Логин не может состоять только из цифр!");
+            
+            RuleFor(x => x.Email)
+                .NotEmpty().WithMessage("Почта не может быть пустой!")
+                .EmailAddress().WithMessage("Некорректный формат почты!")
+                .MaximumLength(128).WithMessage("Длина почты не должна превышать 32 символов!");
+   
+               
+            RuleFor(x => x.Password)
+                .NotEmpty().WithMessage("Пароль не может быть пустым!")
+                .MinimumLength(8).WithMessage("Пароль должен содержать минимум 8 символов!")
+                .Matches("[A-Z]").WithMessage("Пароль должен содержать хотя бы одну заглавную букву!")
+                .Matches("[a-z]").WithMessage("Пароль должен содержать хотя бы одну строчную букву!")
+                .Matches("[0-9]").WithMessage("Пароль должен содержать хотя бы одну цифру!");
+        }
+        
+        private bool BeValidUsername(string username)
+        {
+            if (string.IsNullOrEmpty(username)) return true;
+            return !username.All(char.IsDigit);
+        }
+        
+        private bool BeValidNamePart(string name)
+        {
+            if (string.IsNullOrWhiteSpace(name)) return true;
+            return name.Trim().Length > 0 && name.Replace("-", "").Replace("'", "").Trim().Length > 0;
+        }
+    }
+    
+    
+    public class Endpoint : IEndpoint
+    {
+        public void MapEndpoint(IEndpointRouteBuilder app)
+        {
+            app.MapPost("accounts/sign-up", Handler)
+                .WithTags("Accounts");
+        }
+    }
+
+    public static async Task<IResult> Handler(
+        Request request,
+        IUserRepository userRepository,
+        IValidator<Request> validator,
+        IEventBusPublisher eventBusPublisher,
+        CancellationToken cancellationToken = default)
+    {
+        var validationResult = await validator.ValidateAsync(request, cancellationToken);
+        if (!validationResult.IsValid) return Results.BadRequest(validationResult.Errors);
+
+        var isExistByUsername = await userRepository.IsExistByUserNameAsync(
+            userName: request.UserName,
+            cancellationToken: cancellationToken);
+        if (isExistByUsername) return Results.Conflict("Пользователь с данным логином уже существует!");
+        
+        var isExistByEmail = await userRepository.IsExistByEmailAsync(
+            email: request.Email, 
+            cancellationToken: cancellationToken);
+        if (isExistByEmail) return Results.Conflict("Пользователь с данной почтой уже существует!");
+
+        var user = new User(
+            lastName: request.LastName,
+            firstName: request.FirstName,
+            middleName: request.MiddleName, 
+            userName: request.UserName,
+            email: request.Email,
+            passwordHash: BCrypt.Net.BCrypt.EnhancedHashPassword(request.Password));
+        await userRepository.AddAsync(user, cancellationToken);
+        
+        var response = new Response(
+            Id: user.Id, 
+            LastName: user.LastName,
+            FirstName: user.FirstName,
+            MiddleName: user.MiddleName, 
+            UserName: user.UserName,
+            Email: user.Email, 
+            IsEmailConfirmed: user.IsEmailConfirmed,
+            IsActive: user.IsActive);
+        
+        var welcomeUserEvent = new WelcomeUserEvent(
+            Email: request.Email,
+            UserName: request.UserName,
+            LastName: request.LastName,
+            FirstName: request.FirstName,
+            MiddleName: request.MiddleName);
+        
+        await eventBusPublisher.PublishWelcomeUserAsync(
+            @event: welcomeUserEvent,
+            cancellationToken: cancellationToken);
+        
+        return Results.Created($"users/{response.Id}", response);
+    }
+}

@@ -10,10 +10,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("b0cf930d-80b8-4890-a22d-93f7ae976209")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("NotificationService.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+614bed5c947ac1fa50351842d696b9469eb29f1b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6bdf84a05d1c7e9fa037365a8f32c370f56af677")]
 [assembly: System.Reflection.AssemblyProductAttribute("NotificationService.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NotificationService.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

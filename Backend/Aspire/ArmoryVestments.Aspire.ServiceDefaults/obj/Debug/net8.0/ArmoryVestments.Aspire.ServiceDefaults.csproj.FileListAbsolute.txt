@@ -1,0 +1,13 @@
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\Backend\Aspire\ArmoryVestments.Aspire.ServiceDefaults\bin\Debug\net8.0\ArmoryVestments.Aspire.ServiceDefaults.deps.json
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\Backend\Aspire\ArmoryVestments.Aspire.ServiceDefaults\bin\Debug\net8.0\ArmoryVestments.Aspire.ServiceDefaults.dll
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\Backend\Aspire\ArmoryVestments.Aspire.ServiceDefaults\bin\Debug\net8.0\ArmoryVestments.Aspire.ServiceDefaults.pdb
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\Backend\Aspire\ArmoryVestments.Aspire.ServiceDefaults\obj\Debug\net8.0\ArmoryVestments.Aspire.ServiceDefaults.csproj.AssemblyReference.cache
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\Backend\Aspire\ArmoryVestments.Aspire.ServiceDefaults\obj\Debug\net8.0\ArmoryVestments.Aspire.ServiceDefaults.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\Backend\Aspire\ArmoryVestments.Aspire.ServiceDefaults\obj\Debug\net8.0\ArmoryVestments.Aspire.ServiceDefaults.AssemblyInfoInputs.cache
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\Backend\Aspire\ArmoryVestments.Aspire.ServiceDefaults\obj\Debug\net8.0\ArmoryVestments.Aspire.ServiceDefaults.AssemblyInfo.cs
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\Backend\Aspire\ArmoryVestments.Aspire.ServiceDefaults\obj\Debug\net8.0\ArmoryVestments.Aspire.ServiceDefaults.csproj.CoreCompileInputs.cache
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\Backend\Aspire\ArmoryVestments.Aspire.ServiceDefaults\obj\Debug\net8.0\ArmoryVestments.Aspire.ServiceDefaults.sourcelink.json
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\Backend\Aspire\ArmoryVestments.Aspire.ServiceDefaults\obj\Debug\net8.0\ArmoryVestments.Aspire.ServiceDefaults.dll
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\Backend\Aspire\ArmoryVestments.Aspire.ServiceDefaults\obj\Debug\net8.0\refint\ArmoryVestments.Aspire.ServiceDefaults.dll
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\Backend\Aspire\ArmoryVestments.Aspire.ServiceDefaults\obj\Debug\net8.0\ArmoryVestments.Aspire.ServiceDefaults.pdb
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\Backend\Aspire\ArmoryVestments.Aspire.ServiceDefaults\obj\Debug\net8.0\ref\ArmoryVestments.Aspire.ServiceDefaults.dll
