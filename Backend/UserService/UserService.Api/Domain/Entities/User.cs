@@ -2,29 +2,6 @@
 
 public class User : BaseEntity, IEntity<Guid>
 {
-    public Guid Id { get; set; }
-    
-    public string LastName { get; set; }
-    public string FirstName { get; set; }
-    public string? MiddleName { get; set; }
-
-    
-    public string UserName { get; set; }
-    
-    public string Email { get; set; }
-    
-    public string PasswordHash { get; set; }
-
-    public bool IsEmailConfirmed { get; set; }
-    
-    public bool IsActive { get; set; } = true;
- 
-    
-    public virtual ICollection<Session> Sessions { get; set; }
-
-    public virtual ICollection<Role> Roles { get; set; }
-    public virtual ICollection<UserRoles> UserRoles { get; set; }
-    
     public User() { }
     
     public User(
@@ -84,4 +61,30 @@ public class User : BaseEntity, IEntity<Guid>
         IsEmailConfirmed = isEmailConfirmed;
         IsActive = activateUser;
     }
+    
+    public Guid Id { get; set; }
+    
+    public string LastName { get; set; }
+    public string FirstName { get; set; }
+    public string? MiddleName { get; set; }
+
+    
+    public string UserName { get; set; }
+    
+    public string Email { get; set; }
+    
+    public string PasswordHash { get; set; }
+
+    public bool IsEmailConfirmed { get; set; }
+    
+    public bool IsActive { get; set; } = true;
+ 
+    
+    public virtual ICollection<EmailConfirmationToken> EmailConfirmationTokens { get; set; }
+    public virtual ICollection<ResetPasswordCode> PasswordResetCodes { get; set; }
+    
+    public virtual ICollection<Session> Sessions { get; set; }
+
+    public virtual ICollection<Role> Roles { get; set; }
+    public virtual ICollection<UserRoles> UserRoles { get; set; }
 }

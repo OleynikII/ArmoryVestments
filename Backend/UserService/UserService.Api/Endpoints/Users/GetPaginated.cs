@@ -18,6 +18,8 @@ public static class GetPaginated
         {
             app.MapGet("users", Handler)
                 .WithTags("Users")
+                .WithDescription("Get paginated users")
+                .Produces<PaginatedData<Response>>()
                 .RequireAuthorization(Permissions.Users.Get);
         }
     }

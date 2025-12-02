@@ -38,6 +38,6 @@ public class WelcomeUserEventConsumer : IConsumer<WelcomeUserEvent>
                     </div>
                     """;
         
-        await _smtpEmailService.SendEmailAsync(@event.Email, subject, body);
+        await _smtpEmailService.SendEmailAsync(@event.Email, subject, body, cancellationToken);
     }
 }

@@ -37,7 +37,12 @@ public static class SignIn
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
             app.MapPost("tokens", Handler)
-                .WithTags("Tokens");
+                .WithTags("Tokens")
+                .WithDescription("Login user")
+                .Produces<Response>()
+                .Produces<IList<string>>(StatusCodes.Status400BadRequest)
+                .Produces(StatusCodes.Status401Unauthorized)
+                .Produces(StatusCodes.Status403Forbidden);
         }
     }
 
@@ -50,7 +55,8 @@ public static class SignIn
         CancellationToken cancellationToken = default)
     {
         var validationResult = await validator.ValidateAsync(request, cancellationToken);
-        if (!validationResult.IsValid) return Results.BadRequest(validationResult.Errors);
+        if (!validationResult.IsValid)
+            return Results.BadRequest(validationResult.Errors.Select(x => x.ErrorMessage).ToList());
         
         var user = await userRepository.GetByUserNameAsync(
             userName: request.UserName, 

@@ -2,7 +2,8 @@
 
 public interface ISessionRepository : IRepository<Session, Guid>
 {
-    Task<Session?> GetByTokenAsync(string token,
+    Task<Session?> GetByTokenAsync(
+        string token,
         CancellationToken cancellationToken,
         Func<IQueryable<Session>, IIncludableQueryable<Session, object>>? include = default,
         bool asTracking = default);

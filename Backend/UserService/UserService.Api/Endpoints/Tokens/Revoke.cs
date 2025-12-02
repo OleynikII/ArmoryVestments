@@ -18,7 +18,12 @@ public static class Revoke
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
             app.MapPost("tokens/revoke", Handler)
-                .WithTags("Tokens");
+                .WithTags("Tokens")
+                .WithDescription("Logout user")
+                .Produces(StatusCodes.Status204NoContent)
+                .Produces<IList<string>>(StatusCodes.Status400BadRequest)
+                .Produces(StatusCodes.Status401Unauthorized)
+                .RequireAuthorization();
         }
     }
 
@@ -28,8 +33,9 @@ public static class Revoke
         IValidator<Request> validator,
         CancellationToken cancellationToken = default)
     {
-        var result = await validator.ValidateAsync(request, cancellationToken);
-        if (!result.IsValid) return Results.BadRequest(result.Errors);
+        var validationResult = await validator.ValidateAsync(request, cancellationToken);
+        if (!validationResult.IsValid) 
+            return Results.BadRequest(validationResult.Errors.Select(x => x.ErrorMessage).ToList());
 
         var session = await sessionRepository.GetByTokenAsync(
             token: request.RefreshToken,

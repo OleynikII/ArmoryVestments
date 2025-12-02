@@ -38,6 +38,11 @@ public static class UpdatePassword
         {
             app.MapPut("accounts/update-password", Handler)
                 .WithTags("Accounts")
+                .WithDescription("Update authenticated user password")
+                .Produces(StatusCodes.Status204NoContent)
+                .Produces(StatusCodes.Status401Unauthorized)
+                .Produces<string>(StatusCodes.Status404NotFound)
+                .Produces<IList<string>>(StatusCodes.Status400BadRequest)
                 .RequireAuthorization();
         }
     }
@@ -56,10 +61,11 @@ public static class UpdatePassword
         var user = await userRepository.GetByIdAsync(
             id: userId,
             cancellationToken: cancellationToken);
-        if (user == null) return Results.NotFound();
+        if (user == null) return Results.NotFound("Пользователь не найден!");
         
         var validatorResult = await validator.ValidateAsync(request, cancellationToken);
-        if (!validatorResult.IsValid) return Results.BadRequest(validatorResult.Errors);
+        if (!validatorResult.IsValid)
+            return Results.BadRequest(validatorResult.Errors.Select(x => x.ErrorMessage).ToList());
         
         user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.NewPassword);
         

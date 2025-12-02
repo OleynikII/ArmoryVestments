@@ -31,3 +31,4 @@ global using Shared.RabbitMq;
 global using UserService.Api.Services;
 global using RabbitMQ.Client;
 global using Shared.Contracts.Events;
+global using System.Security.Cryptography;

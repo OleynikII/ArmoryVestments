@@ -3,19 +3,27 @@
 public class NotificationEventConsumerListener : BackgroundService
 {
     private readonly IChannel _channel;
-    private readonly WelcomeUserEventConsumer _welcomeUserEventConsumer;
     private readonly ILogger<NotificationEventConsumerListener> _logger;
+    
+    private readonly WelcomeUserEventConsumer _welcomeUserEventConsumer;
+    private readonly EmailConfirmationEventConsumer _emailConfirmationEventConsumer;
+    private readonly EmailResetPasswordEventConsumer _emailResetPasswordEventConsumer;
     
     private readonly string _queueName = "notification-service-queue";
 
     public NotificationEventConsumerListener(
         IConnection connection,
+        ILogger<NotificationEventConsumerListener> logger,
         WelcomeUserEventConsumer welcomeUserEventConsumer,
-        ILogger<NotificationEventConsumerListener> logger)
+        EmailConfirmationEventConsumer emailConfirmationEventConsumer,
+        EmailResetPasswordEventConsumer emailResetPasswordEventConsumer)
     {
-        _welcomeUserEventConsumer = welcomeUserEventConsumer;
         _channel = connection.CreateChannelAsync().GetAwaiter().GetResult();
         _logger = logger;
+        
+        _welcomeUserEventConsumer = welcomeUserEventConsumer;
+        _emailConfirmationEventConsumer = emailConfirmationEventConsumer;
+        _emailResetPasswordEventConsumer = emailResetPasswordEventConsumer;
     }
     
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -43,9 +51,20 @@ public class NotificationEventConsumerListener : BackgroundService
         switch (routingKey)
         {
             case RoutingKeys.WelcomeUser:
-                var @event = JsonSerializer.Deserialize<WelcomeUserEvent>(message);
-                await _welcomeUserEventConsumer.ConsumeAsync(@event!, cancellationToken);
+                var welcomeUserEvent = JsonSerializer.Deserialize<WelcomeUserEvent>(message);
+                await _welcomeUserEventConsumer.ConsumeAsync(welcomeUserEvent!, cancellationToken);
                 break;
+            
+            case RoutingKeys.EmailVerification:
+                var emailVerificationEvent = JsonSerializer.Deserialize<EmailConfirmationEvent>(message);
+                await _emailConfirmationEventConsumer.ConsumeAsync(emailVerificationEvent!, cancellationToken);
+                break;
+            
+            case RoutingKeys.EmailResetPassword:
+                var emailResetPasswordEvent = JsonSerializer.Deserialize<EmailResetPasswordEvent>(message);
+                await _emailResetPasswordEventConsumer.ConsumeAsync(emailResetPasswordEvent!, cancellationToken);
+                break;
+            
             default:
                 _logger.LogError("{routingKey} is not found!", routingKey);
                 break;

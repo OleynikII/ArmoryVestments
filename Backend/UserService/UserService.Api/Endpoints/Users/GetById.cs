@@ -18,6 +18,10 @@ public static class GetById
         {
             app.MapGet("users/{userId:guid}", Handler)
                 .WithTags("Users")
+                .WithDescription("Get user by id")
+                .Produces<Response>()
+                .Produces<IList<string>>(StatusCodes.Status400BadRequest)
+                .Produces<string>(StatusCodes.Status404NotFound)
                 .RequireAuthorization(Permissions.Users.Get);
         }
     }
@@ -27,12 +31,13 @@ public static class GetById
         IUserRepository userRepository,
         CancellationToken cancellationToken = default)
     {
-        if (userId == Guid.Empty) return Results.BadRequest("Некорректный формат идентификатора!");
+        if (userId == Guid.Empty) 
+            return Results.BadRequest(new List<string> { "Некорректный формат идентификатора!" });
         
         var user = await userRepository.GetByIdAsync(
             id: userId,
             cancellationToken: cancellationToken);
-        if (user == null) return Results.NotFound();
+        if (user == null) return Results.NotFound("Пользователь не найден!");
         
         var userResponse = new Response(
             Id: user.Id, 

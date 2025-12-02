@@ -78,6 +78,10 @@ public static class Update
         {
             app.MapPut("users/{userId:guid}", Handler)
                 .WithTags("Users")
+                .WithDescription("Update user by id")
+                .Produces(StatusCodes.Status204NoContent)
+                .Produces<IList<string>>(StatusCodes.Status400BadRequest)
+                .Produces<string>(StatusCodes.Status404NotFound)
                 .RequireAuthorization(Permissions.Users.Update);
         }
     }
@@ -89,10 +93,12 @@ public static class Update
         IUserRepository userRepository,
         CancellationToken cancellationToken = default)
     {
-        if (userId == Guid.Empty) return Results.BadRequest("Некорректный формат идентификатора!");
+        if (userId == Guid.Empty) 
+            return Results.BadRequest( new List<string>{ "Некорректный формат идентификатора!" });
 
         var validationResult = await validator.ValidateAsync(request, cancellationToken);
-        if (!validationResult.IsValid) return Results.BadRequest(validationResult.Errors);
+        if (!validationResult.IsValid) 
+            return Results.BadRequest(validationResult.Errors.Select(x => x.ErrorMessage).ToList());
         
         var isExistByUserNameForUpdate = await userRepository.IsExistByUserNameForUpdateAsync(
             userId: userId,

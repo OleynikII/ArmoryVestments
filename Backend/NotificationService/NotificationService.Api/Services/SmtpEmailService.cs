@@ -2,7 +2,7 @@
 
 public interface ISmtpEmailService
 {
-    Task SendEmailAsync(string toEmail, string subject, string body);
+    Task SendEmailAsync(string toEmail, string subject, string body, CancellationToken cancellationToken);
 }
 
 public class SmtpEmailService : ISmtpEmailService
@@ -15,7 +15,7 @@ public class SmtpEmailService : ISmtpEmailService
         _smtpEmailOptions = smtpEmailOptions.Value;
     }
     
-    public async Task SendEmailAsync(string toEmail, string subject, string body)
+    public async Task SendEmailAsync(string toEmail, string subject, string body, CancellationToken cancellationToken)
     {
         var fromEmail = _smtpEmailOptions.FromEmail;
         var host = _smtpEmailOptions.Host;
@@ -30,6 +30,6 @@ public class SmtpEmailService : ISmtpEmailService
         client.Credentials = new NetworkCredential(userName, password);
         client.EnableSsl = true;
 
-        await client.SendMailAsync(message);
+        await client.SendMailAsync(message, cancellationToken);
     }
 }

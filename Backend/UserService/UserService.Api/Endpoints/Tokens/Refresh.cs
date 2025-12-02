@@ -19,7 +19,11 @@ public static class Refresh
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
             app.MapPost("tokens/refresh", Handler)
-                .WithTags("Tokens");
+                .WithTags("Tokens")
+                .WithDescription("Refresh expired access token")
+                .Produces<Response>()
+                .Produces<IList<string>>(StatusCodes.Status400BadRequest)
+                .Produces(StatusCodes.Status401Unauthorized);
         }
     }
 
@@ -32,7 +36,8 @@ public static class Refresh
         CancellationToken cancellationToken = default)
     {
         var validationResult = await validator.ValidateAsync(request, cancellationToken);
-        if (!validationResult.IsValid) return Results.BadRequest(validationResult.Errors);
+        if (!validationResult.IsValid)
+            return Results.BadRequest(validationResult.Errors.Select(x => x.ErrorMessage).ToList());
 
         var session = await sessionRepository.GetByTokenAsync(
             token: request.RefreshToken,

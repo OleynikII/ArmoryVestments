@@ -3,31 +3,35 @@
 public interface IEventBusPublisher
 {
     Task PublishWelcomeUserAsync(WelcomeUserEvent @event, CancellationToken cancellationToken);
+    Task PublishEmailConfirmationAsync(EmailConfirmationEvent @event, CancellationToken cancellationToken);
+    Task PublishEmailResetPasswordAsync(EmailResetPasswordEvent @event, CancellationToken cancellationToken);
 }
 
 public class EventBusPublisher : IEventBusPublisher
 {
-    private readonly IConnection _connection;
+    private readonly IChannel _channel;
     private readonly string _exchangeName = "notifications-topic";
-
 
     public EventBusPublisher(
         IConnection connection)
     {
-        _connection = connection;
+        _channel = connection.CreateChannelAsync().GetAwaiter().GetResult();
     }
     
-    public Task PublishWelcomeUserAsync(WelcomeUserEvent @event, CancellationToken cancellationToken) =>
-        PublishAsync(@event, RoutingKeys.WelcomeUser, cancellationToken);
+    public async Task PublishWelcomeUserAsync(WelcomeUserEvent @event, CancellationToken cancellationToken) =>
+        await PublishAsync(@event, RoutingKeys.WelcomeUser, cancellationToken);
+
+    public async Task PublishEmailConfirmationAsync(EmailConfirmationEvent @event, CancellationToken cancellationToken) =>
+        await PublishAsync(@event, RoutingKeys.EmailVerification, cancellationToken);
+
+    public async Task PublishEmailResetPasswordAsync(EmailResetPasswordEvent @event, CancellationToken cancellationToken) =>
+        await PublishAsync(@event, RoutingKeys.EmailResetPassword, cancellationToken);
 
     private async Task PublishAsync<T>(T @event, string routingKey, CancellationToken cancellationToken) where T : class
     {
-        await using var channel = await _connection.CreateChannelAsync(
-            cancellationToken: cancellationToken);
-        
         var body = Encoding.UTF8.GetBytes(JsonSerializer.Serialize(@event));
         
-        await channel.BasicPublishAsync(
+        await _channel.BasicPublishAsync(
             exchange: _exchangeName,
             routingKey: routingKey,
             mandatory: true,

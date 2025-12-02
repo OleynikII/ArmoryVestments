@@ -20,6 +20,10 @@ public static class GetMe
         {
             app.MapGet("accounts/me", Handler)
                 .WithTags("Accounts")
+                .WithDescription("Get authenticated user")
+                .Produces<Response>()
+                .Produces(StatusCodes.Status401Unauthorized)
+                .Produces<string>(StatusCodes.Status404NotFound)
                 .RequireAuthorization();
         }
     }
@@ -36,8 +40,8 @@ public static class GetMe
         var user = await userRepository.GetByIdAsync(
             id: userId,
             cancellationToken: cancellationToken);
-        if (user == null) return Results.NotFound();
-
+        if (user == null) return Results.NotFound("Пользователь не найден!");
+        
         var response = new Response(
             Id: user.Id,
             LastName: user.LastName,

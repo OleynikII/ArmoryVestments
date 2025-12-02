@@ -7,7 +7,12 @@ public static class Delete
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
             app.MapDelete("users/{userId:guid}", Handler)
-                .WithTags("Users");
+                .WithTags("Users")
+                .WithDescription("Delete user by id")
+                .Produces(StatusCodes.Status204NoContent)
+                .Produces<IList<string>>(StatusCodes.Status400BadRequest)
+                .Produces<string>(StatusCodes.Status404NotFound)
+                .RequireAuthorization(Permissions.Users.Delete);
         }
     }
     
@@ -16,7 +21,8 @@ public static class Delete
         IUserRepository userRepository,
         CancellationToken cancellationToken = default)
     {
-        if (userId == Guid.Empty) return Results.BadRequest("Некорректный формат идентификатора!");
+        if (userId == Guid.Empty) 
+            return Results.BadRequest(new List<string> { "Некорректный формат идентификатора!" });
 
         var user = await userRepository.GetByIdAsync(
             id: userId,

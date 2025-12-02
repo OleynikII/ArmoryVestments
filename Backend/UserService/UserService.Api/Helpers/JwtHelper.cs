@@ -39,7 +39,7 @@ public class JwtHelper : IJwtHelper
             issuer: _jwtOptions.Issuer,
             audience: _jwtOptions.Audience,
             claims: claims,
-            expires: DateTime.UtcNow.AddSeconds(_jwtOptions.ExpirationSeconds),
+            expires: DateTime.UtcNow.AddSeconds(Convert.ToInt32(_jwtOptions.ExpirationSeconds)),
             signingCredentials: signingCredentials);
         var tokenHandler = new JwtSecurityTokenHandler();
         var encryptedToken = tokenHandler.WriteToken(token);

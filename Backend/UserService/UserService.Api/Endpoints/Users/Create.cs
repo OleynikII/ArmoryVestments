@@ -85,6 +85,10 @@ public static class Create
         {
             app.MapPost("users", Handler)
                 .WithTags("Users")
+                .WithDescription("Creating user")
+                .Produces<Response>(StatusCodes.Status201Created)
+                .Produces<IList<string>>(StatusCodes.Status400BadRequest)
+                .Produces<string>(StatusCodes.Status409Conflict)
                 .RequireAuthorization(Permissions.Users.Create);
         }
     }
@@ -96,7 +100,8 @@ public static class Create
         CancellationToken cancellationToken = default)
     {
         var validationResult = await validator.ValidateAsync(request, cancellationToken);
-        if (!validationResult.IsValid) return Results.BadRequest(validationResult.Errors);
+        if (!validationResult.IsValid)
+            return Results.BadRequest(validationResult.Errors.Select(x => x.ErrorMessage).ToList());
 
         var isExistByUsername = await userRepository.IsExistByUserNameAsync(
             userName: request.UserName,

@@ -4,7 +4,10 @@ public static class ServiceCollectionExtensions
 {
     public static void AddHelpers(this IServiceCollection services)
     {
-        services.AddTransient<IJwtHelper, JwtHelper>();
+        services
+            .AddTransient<IEmailConfirmationTokenHelper, EmailConfirmationTokenHelper>()
+            .AddTransient<IResetPasswordCodeHelper, ResetPasswordCodeHelper>()
+            .AddTransient<IJwtHelper, JwtHelper>();
     }
 
     public static void AddRepositories(this IServiceCollection services)
@@ -13,7 +16,9 @@ public static class ServiceCollectionExtensions
             .AddTransient<IPermissionRepository, PermissionRepository>()
             .AddTransient<IRoleRepository, RoleRepository>()
             .AddTransient<IUserRepository, UserRepository>()
-            .AddTransient<ISessionRepository, SessionRepository>();
+            .AddTransient<ISessionRepository, SessionRepository>()
+            .AddTransient<IResetPasswordCodeRepository, ResetPasswordCodeRepository>()
+            .AddTransient<IEmailConfirmationTokenRepository, EmailConfirmationTokenRepository>();
     }
     
     public static void ConfigureJwtBearer(this IServiceCollection services, JwtOptions jwtOptions)

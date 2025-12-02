@@ -84,7 +84,11 @@ public static class SignUp
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
             app.MapPost("accounts/sign-up", Handler)
-                .WithTags("Accounts");
+                .WithTags("Accounts")
+                .WithDescription("User registration")
+                .Produces<Response>(StatusCodes.Status201Created)
+                .Produces<IList<ValidationFailure>>(StatusCodes.Status400BadRequest)
+                .Produces<string>(StatusCodes.Status409Conflict);
         }
     }
 
@@ -97,7 +101,7 @@ public static class SignUp
     {
         var validationResult = await validator.ValidateAsync(request, cancellationToken);
         if (!validationResult.IsValid) return Results.BadRequest(validationResult.Errors);
-
+        
         var isExistByUsername = await userRepository.IsExistByUserNameAsync(
             userName: request.UserName,
             cancellationToken: cancellationToken);

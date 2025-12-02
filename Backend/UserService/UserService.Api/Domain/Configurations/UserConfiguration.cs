@@ -32,10 +32,6 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
         builder
             .Property(u => u.PasswordHash)
             .HasMaxLength(72);
-        
-        builder
-            .HasMany(u => u.Sessions)
-            .WithOne(s => s.User);
 
         builder
             .HasMany(u => u.Roles)
