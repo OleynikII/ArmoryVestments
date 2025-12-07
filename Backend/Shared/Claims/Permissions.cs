@@ -1,16 +1,31 @@
-﻿namespace Shared.Claims.Permission;
+﻿namespace Shared.Claims;
 
 public static class Permissions
 {
     public static class Users
     {
-        public const string Get = "Permission.Users.Get";
+        public const string View = "Permission.Users.View";
         public const string Create = "Permission.Users.Create";
         public const string Update = "Permission.Users.Update";
         public const string Delete = "Permission.Users.Delete";
         
         public const string Export = "Permission.Users.Export";
         public const string Import = "Permission.Users.Import";
+    }
+
+    public static class Roles
+    {
+        public const string View = "Permission.Roles.View";
+        public const string Create = "Permission.Roles.Create";
+        public const string Update = "Permission.Roles.Update";
+        public const string Delete = "Permission.Roles.Delete";
+    }
+
+    public static class RolePermissions 
+    {
+        public const string View = "Permission.RolePermissions.View";
+        public const string Create = "Permission.RolePermissions.Create";
+        public const string Delete = "Permission.RolePermissions.Delete";
     }
 
     

@@ -63,8 +63,6 @@ public class JwtHelper : IJwtHelper
         var claims = new List<Claim>
         {
             new(ApplicationClaimTypes.UserId, user.Id.ToString()),
-            new(ApplicationClaimTypes.Email, user.Email),
-            new(ApplicationClaimTypes.UserName, user.UserName)
         }.Union(roleClaims).Union(permissionClaims);
 
         return claims;

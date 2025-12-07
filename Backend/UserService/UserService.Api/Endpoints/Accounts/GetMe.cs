@@ -1,6 +1,4 @@
-﻿using System.Security.Claims;
-
-namespace UserService.Api.Endpoints.Accounts;
+﻿namespace UserService.Api.Endpoints.Accounts;
 
 public static class GetMe
 {

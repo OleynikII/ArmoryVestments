@@ -3,11 +3,8 @@
 public static class UpdatePassword
 {
     public record Request(
-        [property: JsonPropertyName("old_password")]
         string OldPassword,
-        [property: JsonPropertyName("new_password")]
         string NewPassword,
-        [property: JsonPropertyName("confirm_new_password")]
         string ConfirmNewPassword);
 
     public sealed class Validator : AbstractValidator<Request>

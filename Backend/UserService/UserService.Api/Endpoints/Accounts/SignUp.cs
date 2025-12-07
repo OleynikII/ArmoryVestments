@@ -95,12 +95,15 @@ public static class SignUp
     public static async Task<IResult> Handler(
         Request request,
         IUserRepository userRepository,
+        IEmailConfirmationTokenRepository emailConfirmationTokenRepository,
         IValidator<Request> validator,
         IEventBusPublisher eventBusPublisher,
+        IEmailTokenHelper emailTokenHelper,
         CancellationToken cancellationToken = default)
     {
         var validationResult = await validator.ValidateAsync(request, cancellationToken);
-        if (!validationResult.IsValid) return Results.BadRequest(validationResult.Errors);
+        if (!validationResult.IsValid) 
+            return Results.BadRequest(validationResult.Errors.Select(x => x.ErrorMessage).ToList());
         
         var isExistByUsername = await userRepository.IsExistByUserNameAsync(
             userName: request.UserName,
@@ -130,9 +133,15 @@ public static class SignUp
             Email: user.Email, 
             IsEmailConfirmed: user.IsEmailConfirmed,
             IsActive: user.IsActive);
+
+        var emailConfirmationToken = new EmailConfirmationToken(
+            userId: user.Id,
+            token: emailTokenHelper.GenerateTokenByEmail(user.Email));
+        await emailConfirmationTokenRepository.AddAsync(emailConfirmationToken, cancellationToken);
         
         var welcomeUserEvent = new WelcomeUserEvent(
             Email: request.Email,
+            Token: emailConfirmationToken.Token,
             UserName: request.UserName,
             LastName: request.LastName,
             FirstName: request.FirstName,

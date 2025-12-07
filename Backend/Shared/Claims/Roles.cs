@@ -1,4 +1,4 @@
-﻿namespace Shared.Claims.Role;
+﻿namespace Shared.Claims;
 
 public class Roles
 {

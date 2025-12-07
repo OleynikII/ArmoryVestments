@@ -22,7 +22,7 @@ public static class GetById
                 .Produces<Response>()
                 .Produces<IList<string>>(StatusCodes.Status400BadRequest)
                 .Produces<string>(StatusCodes.Status404NotFound)
-                .RequireAuthorization(Permissions.Users.Get);
+                .RequireAuthorization(Permissions.Users.View);
         }
     }
     

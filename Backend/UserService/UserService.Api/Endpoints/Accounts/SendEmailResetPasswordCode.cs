@@ -1,6 +1,6 @@
 ﻿namespace UserService.Api.Endpoints.Accounts;
 
-public static class SendResetPasswordCode
+public static class SendEmailResetPasswordCode
 {
     public record Request(string Email);
 
@@ -19,7 +19,7 @@ public static class SendResetPasswordCode
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
-            app.MapPost("accounts/send-reset-password-code", Handler)
+            app.MapPost("accounts/send-email-reset-password-code", Handler)
                 .WithTags("Accounts")
                 .WithDescription("Send reset password code")
                 .Produces(StatusCodes.Status202Accepted)
@@ -44,7 +44,7 @@ public static class SendResetPasswordCode
                 cancellationToken: cancellationToken);
             if (user == null) return Results.Accepted();
 
-            if (!user.IsEmailConfirmed) return Results.Accepted();
+            if (!user.IsEmailConfirmed) return Results.Forbid();
             
             var resetPasswordCode = new ResetPasswordCode(
                 user.Id,
@@ -56,7 +56,7 @@ public static class SendResetPasswordCode
                 Code: resetPasswordCode.Code);
             await eventBusPublisher.PublishEmailResetPasswordAsync(emailResetPasswordEvent, cancellationToken);
             
-            return Results.Ok(resetPasswordCode.Code);
+            return Results.Accepted();
         }
     }
 }

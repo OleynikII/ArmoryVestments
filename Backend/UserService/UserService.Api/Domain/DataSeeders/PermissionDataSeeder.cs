@@ -1,6 +1,4 @@
-﻿using Shared.Claims.Permission;
-
-namespace UserService.Api.Domain.DataSeeders;
+﻿namespace UserService.Api.Domain.DataSeeders;
 
 public static class PermissionDataSeeder
 {
@@ -10,8 +8,8 @@ public static class PermissionDataSeeder
             .HasData(
                 new Permission(
                     1,
-                    Permissions.Users.Get,
-                    Permissions.Users.Get),
+                    Permissions.Users.View,
+                    Permissions.Users.View),
                 new Permission(
                     2,
                     Permissions.Users.Create,
@@ -31,6 +29,36 @@ public static class PermissionDataSeeder
                 new Permission(
                     6,
                     Permissions.Users.Import,
-                    Permissions.Users.Import));
+                    Permissions.Users.Import),
+                
+                new Permission(
+                    7,
+                    Permissions.Roles.View,
+                    Permissions.Roles.View),
+                new Permission(
+                    8,
+                    Permissions.Roles.Create,
+                    Permissions.Roles.Create),
+                new Permission(
+                    9,
+                    Permissions.Roles.Update,
+                    Permissions.Roles.Update),
+                new Permission(
+                    10, 
+                    Permissions.Roles.Delete,
+                    Permissions.Roles.Delete),
+                
+                new Permission(
+                    11,
+                    Permissions.RolePermissions.View,
+                    Permissions.RolePermissions.View),
+                new Permission(
+                    12,
+                    Permissions.RolePermissions.Create,
+                    Permissions.RolePermissions.Create),
+                new Permission(
+                    13,
+                    Permissions.RolePermissions.Delete,
+                    Permissions.RolePermissions.Delete));
     }
 }

@@ -18,6 +18,22 @@ public static class RolePermissionsDataSeeder
                 new RolePermissions(
                     3, 5),
                 new RolePermissions(
-                    3, 6));
+                    3, 6),
+                
+                new RolePermissions(
+                    3, 7),
+                new RolePermissions(
+                    3, 8),
+                new RolePermissions(
+                    3, 9),
+                new RolePermissions(
+                    3, 10),
+                
+                new RolePermissions(
+                    3, 11),
+                new RolePermissions(
+                    3, 12),
+                new RolePermissions(
+                    3, 13));
     }
 }

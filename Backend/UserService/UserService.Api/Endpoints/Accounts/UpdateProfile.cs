@@ -6,8 +6,7 @@ public static class UpdateProfile
         string LastName,
         string FirstName,
         string MiddleName,
-        string UserName,
-        string Email);
+        string UserName);
 
     public sealed class Validator : AbstractValidator<Request>
     {
@@ -41,11 +40,6 @@ public static class UpdateProfile
                 .Matches(UsernameRegex)
                 .WithMessage("Логин может содержать только латинские буквы, цифры и подчёркивания!")
                 .Must(BeValidUsername).WithMessage("Логин не может состоять только из цифр!");
-
-            RuleFor(x => x.Email)
-                .NotEmpty().WithMessage("Почта не может быть пустой!")
-                .EmailAddress().WithMessage("Некорректный формат почты!")
-                .MaximumLength(128).WithMessage("Длина почты не должна превышать 32 символов!!");
         }
 
         private bool BeValidUsername(string username)
@@ -96,15 +90,12 @@ public static class UpdateProfile
         var validatorResult = await validator.ValidateAsync(request, cancellationToken);
         if (!validatorResult.IsValid) 
             return Results.BadRequest(validatorResult.Errors.Select(x => x.ErrorMessage).ToList());
-
-        if (user.IsEmailConfirmed) user.IsEmailConfirmed = request.Email == user.Email;
         
         user.LastName = request.LastName;
         user.FirstName = request.FirstName;
         user.MiddleName = request.MiddleName;
         
         user.UserName = request.UserName;
-        user.Email = request.Email;
         
         await userRepository.UpdateAsync(user, cancellationToken);
         

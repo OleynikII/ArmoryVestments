@@ -1,11 +1,13 @@
-﻿namespace UserService.Api.Extensions;
+﻿using Shared.Filters;
+
+namespace UserService.Api.Extensions;
 
 public static class ServiceCollectionExtensions
 {
     public static void AddHelpers(this IServiceCollection services)
     {
         services
-            .AddTransient<IEmailConfirmationTokenHelper, EmailConfirmationTokenHelper>()
+            .AddTransient<IEmailTokenHelper, EmailTokenHelper>()
             .AddTransient<IResetPasswordCodeHelper, ResetPasswordCodeHelper>()
             .AddTransient<IJwtHelper, JwtHelper>();
     }
@@ -18,7 +20,8 @@ public static class ServiceCollectionExtensions
             .AddTransient<IUserRepository, UserRepository>()
             .AddTransient<ISessionRepository, SessionRepository>()
             .AddTransient<IResetPasswordCodeRepository, ResetPasswordCodeRepository>()
-            .AddTransient<IEmailConfirmationTokenRepository, EmailConfirmationTokenRepository>();
+            .AddTransient<IEmailConfirmationTokenRepository, EmailConfirmationTokenRepository>()
+            .AddTransient<IEmailChangeTokenRepository, EmailChangeTokenRepository>();
     }
     
     public static void ConfigureJwtBearer(this IServiceCollection services, JwtOptions jwtOptions)
@@ -63,7 +66,6 @@ public static class ServiceCollectionExtensions
                 }
                 return type.Name;
             });
-
             
             options.SwaggerDoc("v1", new OpenApiInfo { Title = "UserService API", Version = "v1" });
             options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
@@ -85,6 +87,8 @@ public static class ServiceCollectionExtensions
                     Array.Empty<string>()
                 }
             });
+            
+            options.SchemaFilter<SnakeCaseSchemaFilter>();
         });
     }
 

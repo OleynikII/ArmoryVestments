@@ -5,6 +5,7 @@ public interface IEventBusPublisher
     Task PublishWelcomeUserAsync(WelcomeUserEvent @event, CancellationToken cancellationToken);
     Task PublishEmailConfirmationAsync(EmailConfirmationEvent @event, CancellationToken cancellationToken);
     Task PublishEmailResetPasswordAsync(EmailResetPasswordEvent @event, CancellationToken cancellationToken);
+    Task PublishEmailChangeAsync(EmailChangeEvent @event, CancellationToken cancellationToken);
 }
 
 public class EventBusPublisher : IEventBusPublisher
@@ -22,10 +23,13 @@ public class EventBusPublisher : IEventBusPublisher
         await PublishAsync(@event, RoutingKeys.WelcomeUser, cancellationToken);
 
     public async Task PublishEmailConfirmationAsync(EmailConfirmationEvent @event, CancellationToken cancellationToken) =>
-        await PublishAsync(@event, RoutingKeys.EmailVerification, cancellationToken);
+        await PublishAsync(@event, RoutingKeys.EmailConfirmation, cancellationToken);
 
     public async Task PublishEmailResetPasswordAsync(EmailResetPasswordEvent @event, CancellationToken cancellationToken) =>
         await PublishAsync(@event, RoutingKeys.EmailResetPassword, cancellationToken);
+
+    public async Task PublishEmailChangeAsync(EmailChangeEvent @event, CancellationToken cancellationToken) =>
+        await PublishAsync(@event, RoutingKeys.EmailChange, cancellationToken);
 
     private async Task PublishAsync<T>(T @event, string routingKey, CancellationToken cancellationToken) where T : class
     {

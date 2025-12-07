@@ -8,6 +8,7 @@ public class NotificationEventConsumerListener : BackgroundService
     private readonly WelcomeUserEventConsumer _welcomeUserEventConsumer;
     private readonly EmailConfirmationEventConsumer _emailConfirmationEventConsumer;
     private readonly EmailResetPasswordEventConsumer _emailResetPasswordEventConsumer;
+    private readonly EmailChangeEventConsumer _emailChangeEventConsumer;
     
     private readonly string _queueName = "notification-service-queue";
 
@@ -16,7 +17,8 @@ public class NotificationEventConsumerListener : BackgroundService
         ILogger<NotificationEventConsumerListener> logger,
         WelcomeUserEventConsumer welcomeUserEventConsumer,
         EmailConfirmationEventConsumer emailConfirmationEventConsumer,
-        EmailResetPasswordEventConsumer emailResetPasswordEventConsumer)
+        EmailResetPasswordEventConsumer emailResetPasswordEventConsumer,
+        EmailChangeEventConsumer emailChangeEventConsumer)
     {
         _channel = connection.CreateChannelAsync().GetAwaiter().GetResult();
         _logger = logger;
@@ -24,6 +26,7 @@ public class NotificationEventConsumerListener : BackgroundService
         _welcomeUserEventConsumer = welcomeUserEventConsumer;
         _emailConfirmationEventConsumer = emailConfirmationEventConsumer;
         _emailResetPasswordEventConsumer = emailResetPasswordEventConsumer;
+        _emailChangeEventConsumer = emailChangeEventConsumer;
     }
     
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -55,7 +58,7 @@ public class NotificationEventConsumerListener : BackgroundService
                 await _welcomeUserEventConsumer.ConsumeAsync(welcomeUserEvent!, cancellationToken);
                 break;
             
-            case RoutingKeys.EmailVerification:
+            case RoutingKeys.EmailConfirmation:
                 var emailVerificationEvent = JsonSerializer.Deserialize<EmailConfirmationEvent>(message);
                 await _emailConfirmationEventConsumer.ConsumeAsync(emailVerificationEvent!, cancellationToken);
                 break;
@@ -63,6 +66,11 @@ public class NotificationEventConsumerListener : BackgroundService
             case RoutingKeys.EmailResetPassword:
                 var emailResetPasswordEvent = JsonSerializer.Deserialize<EmailResetPasswordEvent>(message);
                 await _emailResetPasswordEventConsumer.ConsumeAsync(emailResetPasswordEvent!, cancellationToken);
+                break;
+            
+            case RoutingKeys.EmailChange:
+                var emailChangeEvent = JsonSerializer.Deserialize<EmailChangeEvent>(message);
+                await _emailChangeEventConsumer.ConsumeAsync(emailChangeEvent!, cancellationToken);
                 break;
             
             default:

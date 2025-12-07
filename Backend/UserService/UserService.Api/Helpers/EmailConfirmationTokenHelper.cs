@@ -1,12 +1,12 @@
 ﻿namespace UserService.Api.Helpers;
 
-public interface IEmailConfirmationTokenHelper
+public interface IEmailTokenHelper
 {
     string GenerateTokenByEmail(string email);
 }
 
 
-public class EmailConfirmationTokenHelper : IEmailConfirmationTokenHelper
+public class EmailTokenHelper : IEmailTokenHelper
 {
     public string GenerateTokenByEmail(string email)
     {

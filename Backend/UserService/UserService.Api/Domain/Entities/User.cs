@@ -79,7 +79,7 @@ public class User : BaseEntity, IEntity<Guid>
     
     public bool IsActive { get; set; } = true;
  
-    
+    public virtual ICollection<EmailChangeToken> EmailChangeTokens { get; set; }
     public virtual ICollection<EmailConfirmationToken> EmailConfirmationTokens { get; set; }
     public virtual ICollection<ResetPasswordCode> PasswordResetCodes { get; set; }
     

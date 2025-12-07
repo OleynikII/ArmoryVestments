@@ -12,6 +12,7 @@ builder.Services.Configure<JwtOptions>(configuration.GetSection(nameof(JwtOption
 // Options
 
 builder.AddServiceDefaults();
+
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.ConfigureSwagger();
@@ -34,6 +35,11 @@ builder.AddRabbitMQClient(connectionName: "rabbitmq");
 
 builder.Services.AddScoped<IEventBusPublisher, EventBusPublisher>();
 
+builder.Services.ConfigureHttpJsonOptions(options =>
+{
+    options.SerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.SnakeCaseLower;
+    options.SerializerOptions.PropertyNameCaseInsensitive = true;
+});
 
 var app = builder.Build();
 

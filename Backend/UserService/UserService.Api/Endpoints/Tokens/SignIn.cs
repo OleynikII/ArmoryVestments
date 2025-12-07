@@ -52,6 +52,7 @@ public static class SignIn
         ISessionRepository sessionRepository,
         IValidator<Request> validator,
         IJwtHelper jwtHelper,
+        IHttpContextAccessor httpContextAccessor,
         CancellationToken cancellationToken = default)
     {
         var validationResult = await validator.ValidateAsync(request, cancellationToken);
@@ -68,7 +69,9 @@ public static class SignIn
         if (!isPasswordConfirmed) return Results.Unauthorized();
         
         if (!user.IsActive) return Results.Forbid();
-
+        
+        if (!user.IsEmailConfirmed) return Results.Forbid();
+        
         var refreshToken = jwtHelper.GenerateRefreshToken();
         var accessToken = jwtHelper.GenerateJwtToken(user);
 

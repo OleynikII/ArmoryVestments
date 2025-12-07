@@ -6,6 +6,7 @@ public class UserServiceDbContext(
     DbContextOptions<UserServiceDbContext> options) 
     : DbContext(options)
 {
+    public DbSet<EmailChangeToken> EmailChangeTokens => Set<EmailChangeToken>();
     public DbSet<ResetPasswordCode> PasswordResetCodes => Set<ResetPasswordCode>();
     public DbSet<EmailConfirmationToken> EmailConfirmationTokens => Set<EmailConfirmationToken>();
     public DbSet<Session> Sessions => Set<Session>();

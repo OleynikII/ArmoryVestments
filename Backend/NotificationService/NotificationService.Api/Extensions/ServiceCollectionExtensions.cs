@@ -7,7 +7,8 @@ public static class ServiceCollectionExtensions
       services
          .AddTransient<WelcomeUserEventConsumer>()
          .AddTransient<EmailConfirmationEventConsumer>()
-         .AddTransient<EmailResetPasswordEventConsumer>();
+         .AddTransient<EmailResetPasswordEventConsumer>()
+         .AddTransient<EmailChangeEventConsumer>();
    }
    
    

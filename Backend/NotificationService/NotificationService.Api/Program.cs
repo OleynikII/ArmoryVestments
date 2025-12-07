@@ -22,6 +22,12 @@ builder.AddRabbitMQClient(connectionName: "rabbitmq");
 builder.Services.AddConsumers();
 builder.Services.AddHostedService<NotificationEventConsumerListener>();
 
+builder.Services.ConfigureHttpJsonOptions(options =>
+{
+    options.SerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.SnakeCaseLower;
+    options.SerializerOptions.PropertyNameCaseInsensitive = true;
+});
+
 var app = builder.Build();
 
 app.UseMiddleware<ErrorHandlerMiddleware>();

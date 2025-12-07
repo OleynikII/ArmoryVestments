@@ -9,7 +9,7 @@ public class PermissionConfiguration
 
         builder
             .Property(p => p.Title)
-            .HasMaxLength(32);
+            .HasMaxLength(64);
         builder
             .HasIndex(p => p.Title)
             .IsUnique()

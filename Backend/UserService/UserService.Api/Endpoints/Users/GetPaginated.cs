@@ -20,7 +20,7 @@ public static class GetPaginated
                 .WithTags("Users")
                 .WithDescription("Get paginated users")
                 .Produces<PaginatedData<Response>>()
-                .RequireAuthorization(Permissions.Users.Get);
+                .RequireAuthorization(Permissions.Users.View);
         }
     }
     
