@@ -1,0 +1,13 @@
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\backend\src\Shared\ServiceDefaults\bin\Debug\net8.0\ServiceDefaults.deps.json
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\backend\src\Shared\ServiceDefaults\bin\Debug\net8.0\ServiceDefaults.dll
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\backend\src\Shared\ServiceDefaults\bin\Debug\net8.0\ServiceDefaults.pdb
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\backend\src\Shared\ServiceDefaults\obj\Debug\net8.0\ServiceDefaults.csproj.AssemblyReference.cache
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\backend\src\Shared\ServiceDefaults\obj\Debug\net8.0\ServiceDefaults.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\backend\src\Shared\ServiceDefaults\obj\Debug\net8.0\ServiceDefaults.AssemblyInfoInputs.cache
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\backend\src\Shared\ServiceDefaults\obj\Debug\net8.0\ServiceDefaults.AssemblyInfo.cs
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\backend\src\Shared\ServiceDefaults\obj\Debug\net8.0\ServiceDefaults.csproj.CoreCompileInputs.cache
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\backend\src\Shared\ServiceDefaults\obj\Debug\net8.0\ServiceDefaults.sourcelink.json
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\backend\src\Shared\ServiceDefaults\obj\Debug\net8.0\ServiceDefaults.dll
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\backend\src\Shared\ServiceDefaults\obj\Debug\net8.0\refint\ServiceDefaults.dll
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\backend\src\Shared\ServiceDefaults\obj\Debug\net8.0\ServiceDefaults.pdb
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\backend\src\Shared\ServiceDefaults\obj\Debug\net8.0\ref\ServiceDefaults.dll

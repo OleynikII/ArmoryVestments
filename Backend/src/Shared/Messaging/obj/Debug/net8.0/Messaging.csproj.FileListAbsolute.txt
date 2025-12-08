@@ -1,0 +1,12 @@
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\backend\src\Shared\Messaging\bin\Debug\net8.0\Messaging.deps.json
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\backend\src\Shared\Messaging\bin\Debug\net8.0\Messaging.dll
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\backend\src\Shared\Messaging\bin\Debug\net8.0\Messaging.pdb
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\backend\src\Shared\Messaging\obj\Debug\net8.0\Messaging.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\backend\src\Shared\Messaging\obj\Debug\net8.0\Messaging.AssemblyInfoInputs.cache
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\backend\src\Shared\Messaging\obj\Debug\net8.0\Messaging.AssemblyInfo.cs
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\backend\src\Shared\Messaging\obj\Debug\net8.0\Messaging.csproj.CoreCompileInputs.cache
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\backend\src\Shared\Messaging\obj\Debug\net8.0\Messaging.sourcelink.json
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\backend\src\Shared\Messaging\obj\Debug\net8.0\Messaging.dll
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\backend\src\Shared\Messaging\obj\Debug\net8.0\refint\Messaging.dll
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\backend\src\Shared\Messaging\obj\Debug\net8.0\Messaging.pdb
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\backend\src\Shared\Messaging\obj\Debug\net8.0\ref\Messaging.dll

@@ -1,0 +1,15 @@
+﻿global using System.Net;
+global using System.Net.Mail;
+global using NotificationsService.Consumers;
+global using NotificationsService;
+global using NotificationsService.Services;
+global using NotificationsService.Extensions;
+global using System.Text.Json;
+global using UserService.Api.Middlewares;
+global using RabbitMQ.Client;
+global using RabbitMQ.Client.Events;
+global using System.Text;
+global using Microsoft.Extensions.Options;
+global using NotificationsService.Options;
+global using Messaging.Abstractions;
+global using Messaging.Contracts.Events.Email;

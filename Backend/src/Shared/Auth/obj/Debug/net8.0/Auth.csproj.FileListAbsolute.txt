@@ -1,0 +1,12 @@
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\backend\src\Shared\Auth\bin\Debug\net8.0\Auth.deps.json
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\backend\src\Shared\Auth\bin\Debug\net8.0\Auth.dll
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\backend\src\Shared\Auth\bin\Debug\net8.0\Auth.pdb
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\backend\src\Shared\Auth\obj\Debug\net8.0\Auth.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\backend\src\Shared\Auth\obj\Debug\net8.0\Auth.AssemblyInfoInputs.cache
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\backend\src\Shared\Auth\obj\Debug\net8.0\Auth.AssemblyInfo.cs
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\backend\src\Shared\Auth\obj\Debug\net8.0\Auth.csproj.CoreCompileInputs.cache
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\backend\src\Shared\Auth\obj\Debug\net8.0\Auth.sourcelink.json
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\backend\src\Shared\Auth\obj\Debug\net8.0\Auth.dll
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\backend\src\Shared\Auth\obj\Debug\net8.0\refint\Auth.dll
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\backend\src\Shared\Auth\obj\Debug\net8.0\Auth.pdb
+C:\Users\ilyao\OneDrive\Рабочий стол\Projects\ArmoryVestments\backend\src\Shared\Auth\obj\Debug\net8.0\ref\Auth.dll

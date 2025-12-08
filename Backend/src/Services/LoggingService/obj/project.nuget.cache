@@ -1,0 +1,34 @@
+{
+  "version": 2,
+  "dgSpecHash": "1nYj0m1SmdI=",
+  "success": false,
+  "projectFilePath": "C:\\Users\\ilyao\\OneDrive\\Рабочий стол\\Projects\\ArmoryVestments\\backend\\src\\Services\\LoggingService\\LoggingService.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ilyao\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\ilyao\\.nuget\\packages\\microsoft.openapi\\1.6.14\\microsoft.openapi.1.6.14.nupkg.sha512",
+    "C:\\Users\\ilyao\\.nuget\\packages\\swashbuckle.aspnetcore\\6.6.2\\swashbuckle.aspnetcore.6.6.2.nupkg.sha512",
+    "C:\\Users\\ilyao\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.6.2\\swashbuckle.aspnetcore.swagger.6.6.2.nupkg.sha512",
+    "C:\\Users\\ilyao\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.6.2\\swashbuckle.aspnetcore.swaggergen.6.6.2.nupkg.sha512",
+    "C:\\Users\\ilyao\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.6.2\\swashbuckle.aspnetcore.swaggerui.6.6.2.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'C:\\Users\\ilyao\\OneDrive\\Рабочий стол\\Projects\\ArmoryVestments\\backend\\src\\Aspire\\ArmoryVestments.Aspire.ServiceDefaults\\ArmoryVestments.Aspire.ServiceDefaults.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "C:\\Users\\ilyao\\OneDrive\\Рабочий стол\\Projects\\ArmoryVestments\\backend\\src\\Aspire\\ArmoryVestments.Aspire.ServiceDefaults\\ArmoryVestments.Aspire.ServiceDefaults.csproj",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Unable to find project information for 'C:\\Users\\ilyao\\OneDrive\\Рабочий стол\\Projects\\ArmoryVestments\\backend\\src\\Shared\\Shared.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
+      "libraryId": "C:\\Users\\ilyao\\OneDrive\\Рабочий стол\\Projects\\ArmoryVestments\\backend\\src\\Shared\\Shared.csproj",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
+}
